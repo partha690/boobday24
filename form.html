@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <img style="margin: 150px; margin-top: 0%; margin-bottom: 0%;" src="nnnn.jpg" width="900" height="200">
+<hr>
+    <h1 style="margin: 50px;">PARTHA</h1>
+    <title>FORM DATA</title>
+    <style>
+        *{ box-sizing: border-box; }
+        html, body{ margin: 0; padding: 0;}
+        .container{
+            margin: 10px 70px;
+        }
+        .form-group{
+            margin: 10px;
+        }
+        input{
+            width: 100%;
+            border: solid 1px rgb(0, 1, 3);
+            padding: 15px 10px;
+        }
+        button{
+            width: 200px;
+            padding: 15px;
+            margin-left: 400px;
+            background: #fff;
+            color: dodgerblue;
+            border: solid 1px dodgerblue;
+            cursor: pointer;
+            transition:  all .38s ease-in-out;
+        }
+        button:hover{
+            background: dodgerblue;
+            color: #fff;
+        }
+        table tr td{
+            border: solid 1px #eee;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>SIGNUP FORM</h2>
+        <form role="form" onsubmit="signUp(event);">
+            <div class="form-group">
+                <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Your message</label>
+                <textarea class="form-control" id="cmni" name="comment" rows="30" cols="150" placeholder="Your message here"></textarea>
+              </div>
+        
+        <!-- <div class="form-group" style="">
+            
+            <input rows="3" type="comment" name="cmni" id="cmni" placeholder="comment" required>
+            <textarea rows="3"></textarea>
+        </div> -->
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+
+        <h2>USERS INFO</h2>
+        <div id="output">
+            <!-- DISPLAY USERS DATA -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const signUp = e => {
+            let formData = {
+                fname: document.getElementById('fname').value,
+                lname: document.getElementById('lname').value,
+                email: document.getElementById('email').value,
+                pwd: document.getElementById('pwd').value,
+            cmni: document.getElementById('cmni').value
+            }
+            localStorage.setItem('formData', JSON.stringify(formData));
+            // console.log(localStorage.getItem('formData'));
+            dispData();
+            e.preventDefault();
+        }
+
+        function dispData(){
+            // console.log(localStorage.getItem('formData'));
+            let {fname, lname, email, pwd,cmni} = JSON.parse(localStorage.getItem('formData'));
+            var output = document.getElementById('output');
+            output.innerHTML = `
+            <table>
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td>${fname}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>${lname}</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td>${email}</td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>${pwd}</td>
+                    </tr>
+                    <tr>
+                        <td>message</td>
+                        <td>${cmni}</td>
+                    </tr>
+                </tbody>
+            </table>`;
+        }
+        dispData();
+    </script>
+</body>
+</html>

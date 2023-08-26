@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    
+  }
+  
+  html {
+    
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+#service {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: #00B894;
+  }
+  
+  #service .heading {
+    font-size: 3rem;
+    padding-top: 5rem;
+    margin: 2rem 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  
+  #service .heading::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: .3rem;
+    width: 90%;
+    border-radius: 5rem;
+    background: #333;
+  }
+  
+  #service .box-container {
+    width: 90%;
+  }
+  
+  #service .box-container .box {
+    background: #fff;
+    max-width: 60rem;
+    border-radius: .5rem;
+    -webkit-box-shadow: 0 0 .3rem #333;
+            box-shadow: 0 0 .3rem #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 4rem 2rem;
+    margin: 1rem;
+    clear: both;
+  }
+  
+  #service .box-container .box img {
+    height: 7rem;
+    margin-right: 4rem;
+  }
+  
+  #service .box-container .box .info {
+    padding-left: 2.5rem;
+    border-left: 0.4rem solid #00B894;
+  }
+  
+  #service .box-container .box .info h2 {
+    font-size: 3rem;
+    color: #00B894;
+  }
+  
+  #service .box-container .box .info p {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  #service .box-container .box:nth-child(2) {
+    float: center;
+  }
+  .wrapper {
+    height: 10vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 1.7em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+  .about-row {
+    background-color: #ffffff;
+    width: 90%;
+    margin: 150px auto 0 auto;
+  }
+  
+  /* .about-section {
+    z-index: 99;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color:#ec49df;
+  } */
+  
+  .about-text {
+    font-size: 23px;
+    text-align: justify;
+  }
+  
+  .about-pic {
+    margin-top:110px;
+    margin-bottom: 8px;
+    width: 200px;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(44, 42, 42, 0.68);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(158, 158, 158, 0.68);
+    box-shadow: 0px 0px 5px 1px rgba(158, 158, 158, 0.68);
+  }
